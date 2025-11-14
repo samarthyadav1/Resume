@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Samarth Yadav - Strategic Business Leader</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+        <style>
+        /* Custom styles for elegance and Apple-like minimalism */
+        :root {
+            --primary-color: #1f2937; /* Charcoal Gray - Elegant Primary */
+            --accent-color: #4f46e5; /* Subtle Indigo/Blue for links */
+            --bg-color-light: #f9fafb; /* Near-White Background */
+            --bg-color-dark: #ffffff; /* Pure White Card Background */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color-light);
+            color: var(--primary-color);
+            scroll-behavior: smooth;
+        }
+        .hero-section {
+            background-color: var(--bg-color-dark);
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            min-height: 80vh;
+        }
+        .achievement-card {
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-radius: 1rem; /* More rounded corners for softness */
+        }
+        .achievement-card:hover {
+            transform: translateY(-8px); /* Deeper lift */
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .link-style {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .link-style:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .link-style:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        .modal {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#1f2937', /* Charcoal */
+                        'accent-indigo': '#4f46e5', /* Accent */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="initParallax()">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-20 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight text-primary-dark">SAMARTH YADAV</a>
+            <nav class="space-x-8">
+                <a href="#summary" class="text-gray-600 hover:text-accent-indigo transition duration-200 hidden sm:inline-block font-medium">Summary</a>
+                <a href="#achievements" class="text-gray-600 hover:text-accent-indigo transition duration-200 hidden sm:inline-block font-medium">Impact</a>
+                <a href="#experience" class="text-gray-600 hover:text-accent-indigo transition duration-200 hidden sm:inline-block font-medium">Experience</a>
+                <a href="#skills" class="text-gray-600 hover:text-accent-indigo transition duration-200 hidden sm:inline-block font-medium">Expertise</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section (Clean White Background) -->
+    <section class="hero-section text-primary-dark flex items-center justify-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+            
+            <!-- Photo (Parallax effect) -->
+            <div id="hero-image-container" class="mb-8 p-1 bg-white shadow-xl rounded-full border-4 border-gray-100" style="transition: transform 0.5s ease-out;">
+                 <img src="Samarthyadav.jpeg" alt="Samarth Yadav Profile Photo" class="w-40 h-40 object-cover rounded-full" onerror="this.onerror=null;this.src='https://placehold.co/160x160/cccccc/333333?text=S+Y'" />
+            </div>
+
+            <p class="text-xl font-semibold text-gray-500 tracking-wider uppercase mb-2">Portfolio</p>
+            <h1 class="text-5xl sm:text-7xl font-extrabold mb-4 leading-tight tracking-tighter">
+                SAMARTH YADAV
+            </h1>
+            <p class="text-2xl sm:text-3xl font-light text-accent-indigo tracking-wide mb-8">
+                Business Consultant & Strategic GTM Leader
+            </p>
+            
+            <div class="flex flex-wrap justify-center items-center gap-6 text-lg font-medium">
+                <a href="https://www.linkedin.com/in/samarthydv/" target="_blank" class="flex items-center space-x-2 link-style text-primary-dark hover:text-accent-indigo">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="mailto:samarthyadav.works@gmail.com" class="flex items-center space-x-2 link-style text-primary-dark hover:text-accent-indigo">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    <span>Email Me</span>
+                </a>
+                <a href="tel:+919119146001" class="flex items-center space-x-2 link-style text-primary-dark hover:text-accent-indigo">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                    <span>+91 9119146001</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section id="summary" class="py-24 bg-gray-50 border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-2">Introduction</h2>
+            <h3 class="text-4xl font-bold mb-6 text-primary-dark">Focusing on Performance & Scalability</h3>
+            <p class="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                A **data-driven business development professional** with 3+ years of experience in strategic planning, sales operations, and consulting. I specialize in building and scaling **Business Development ecosystems**, leveraging CRM management, multichannel outreach, and data analytics to drive measurable growth and enhance performance across global markets.
+            </p>
+        </div>
+    </section>
+
+    <!-- Key Impact/Achievements Section -->
+    <section id="achievements" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 text-center mb-2">Core Results</h2>
+            <h3 class="text-4xl font-bold text-center mb-12 text-primary-dark">Quantifiable Impact</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Conversion Rate -->
+                <div onclick="showModal('Campaign Conversion Rate', 'Achieved by managing a 10-member cross-functional team and designing effective multitouch, multichannel outreach strategies across Email, LinkedIn, and Cold Calling.')" class="achievement-card bg-bg-color-dark p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="trending-up" class="w-7 h-7 text-accent-indigo mr-3"></i>
+                        <h4 class="text-lg font-semibold text-gray-500">Sales Velocity</h4>
+                    </div>
+                    <p class="text-5xl font-extrabold text-primary-dark mb-2">23.7%</p>
+                    <h5 class="text-xl font-semibold mt-2 text-primary-dark">Conversion Rate Increase</h5>
+                </div>
+                
+                <!-- Card 2: Proposal Turnaround Time -->
+                <div onclick="showModal('Reduction in Proposal Turnaround Time', 'Optimized complex sales forecasting and data modeling (using Zoho CRM and advanced Excel techniques) to streamline the estimation process for client proposals.')" class="achievement-card bg-bg-color-dark p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="gauge" class="w-7 h-7 text-accent-indigo mr-3"></i>
+                        <h4 class="text-lg font-semibold text-gray-500">Operational Efficiency</h4>
+                    </div>
+                    <p class="text-5xl font-extrabold text-primary-dark mb-2">30%</p>
+                    <h5 class="text-xl font-semibold mt-2 text-primary-dark">Proposal TAT Reduction</h5>
+                </div>
+
+                <!-- Card 3: Startup Recognition & Funding -->
+                <div onclick="showModal('Startup Recognition & Secured Funding', 'Ranked among the Top 100 Startups in the competitive Startup India Together 2022 Challenge and successfully secured seed funding from the Government of India & Karnataka through the NAIN initiative.')" class="achievement-card bg-bg-color-dark p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="award" class="w-7 h-7 text-accent-indigo mr-3"></i>
+                        <h4 class="text-lg font-semibold text-gray-500">Strategic Validation</h4>
+                    </div>
+                    <p class="text-5xl font-extrabold text-primary-dark mb-2">Top 100</p>
+                    <h5 class="text-xl font-semibold mt-2 text-primary-dark">Startup Challenge Rank</h5>
+                </div>
+            </div>
+            <p class="text-center mt-8 text-gray-500">Click on any card to see more detail.</p>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 text-center mb-2">My Journey</h2>
+            <h3 class="text-4xl font-bold text-center mb-12 text-primary-dark">Professional Experience</h3>
+
+            <div class="space-y-12">
+
+                <!-- Job 1: TapMind Technologies -->
+                <div class="p-8 bg-white rounded-2xl shadow-xl border-l-4 border-accent-indigo transition duration-300 hover:shadow-2xl">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-4">
+                        <div>
+                            <h4 class="text-2xl font-bold text-primary-dark">Sales Coordinator & BD Manager</h4>
+                            <p class="text-lg font-medium text-gray-600">TapMind Technologies Private Limited</p>
+                        </div>
+                        <span class="text-sm font-semibold text-gray-500 mt-2 sm:mt-0">12/2024 - Present | Bangalore, India</span>
+                    </div>
+                    <ul class="list-disc ml-6 space-y-3 text-gray-700">
+                        <li>**GTM Ecosystem Build:** Architected and scaled the entire Business Development ecosystem (sourcing, automation, analytics) to enhance global publisher acquisition.</li>
+                        <li>**Process & Data:** Optimized CRM data structures (Zoho/Smartlead) and implemented engagement-based follow-up logic, driving data-driven insights.</li>
+                        <li>**Leadership:** Managed a 10-member cross-functional team, directly contributing to the **23.7% campaign conversion rate**.</li>
+                    </ul>
+                </div>
+
+                <!-- Job 2: AVIN Systems -->
+                <div class="p-8 bg-white rounded-2xl shadow-xl border-l-4 border-accent-indigo transition duration-300 hover:shadow-2xl">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-4">
+                        <div>
+                            <h4 class="text-2xl font-bold text-primary-dark">Associate Business Development Engineer</h4>
+                            <p class="text-lg font-medium text-gray-600">AVIN Systems Private Limited</p>
+                        </div>
+                        <span class="text-sm font-semibold text-gray-500 mt-2 sm:mt-0">07/2023 - 11/2024 | Bangalore, India</span>
+                    </div>
+                    <ul class="list-disc ml-6 space-y-3 text-gray-700">
+                        <li>**Sales Execution:** Managed 21 sales lifecycles, resulting in a **13.2% increase in the client base**.</li>
+                        <li>**Financial Modeling:** Developed estimation templates in Zoho CRM and Excel, leading to a **30% reduction in proposal turnaround time**.</li>
+                        <li>**Compliance:** Supported creation of legal documentation (MSAs, NDAs) ensuring alignment with technical and commercial requirements.</li>
+                    </ul>
+                </div>
+                
+                 <!-- Job 3: Inforquest Inc. -->
+                <div class="p-8 bg-white rounded-2xl shadow-xl border-l-4 border-accent-indigo transition duration-300 hover:shadow-2xl">
+                    <div class="flex flex-col sm:flex-row justify-between items-start mb-4">
+                        <div>
+                            <h4 class="text-2xl font-bold text-primary-dark">Junior Business Consultant</h4>
+                            <p class="text-lg font-medium text-gray-600">Inforquest Inc.</p>
+                        </div>
+                        <span class="text-sm font-semibold text-gray-500 mt-2 sm:mt-0">10/2022 - 06/2023 | Mangalore, India</span>
+                    </div>
+                    <ul class="list-disc ml-6 space-y-3 text-gray-700">
+                        <li>**Efficiency & Retention:** Increased enterprise efficiency by **15%** through process assessments and improved client retention by **34%**.</li>
+                        <li>**Strategic Support:** Conducted market research and created tailored proposals to optimize client workforce planning and business acquisition strategies.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Tools Section -->
+    <section id="skills" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 text-center mb-2">My Toolbox</h2>
+            <h3 class="text-4xl font-bold text-center mb-12 text-primary-dark">Core Skills & Expertise</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Category 1: Business Development & Sales -->
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <h4 class="text-xl font-bold mb-5 text-accent-indigo flex items-center"><i data-lucide="briefcase" class="w-5 h-5 mr-3"></i> Sales & GTM</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-primary-dark/10 text-primary-dark px-4 py-1.5 rounded-lg text-sm font-medium">Lead Generation</span>
+                        <span class="bg-primary-dark/10 text-primary-dark px-4 py-1.5 rounded-lg text-sm font-medium">Multi-Channel Outreach</span>
+                        <span class="bg-primary-dark/10 text-primary-dark px-4 py-1.5 rounded-lg text-sm font-medium">Sales Process Ownership</span>
+                        <span class="bg-primary-dark/10 text-primary-dark px-4 py-1.5 rounded-lg text-sm font-medium">Account Management</span>
+                        <span class="bg-primary-dark/10 text-primary-dark px-4 py-1.5 rounded-lg text-sm font-medium">Conversion Optimization</span>
+                    </div>
+                </div>
+
+                <!-- Category 2: Strategy & Data -->
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <h4 class="text-xl font-bold mb-5 text-accent-indigo flex items-center"><i data-lucide="line-chart" class="w-5 h-5 mr-3"></i> Strategy & Optimization</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-primary-dark/10 text-primary-dark px-4 py-1.5 rounded-lg text-sm font-medium">Business Strategy</span>
+                        <span class="bg-primary-dark/10 text-primary-dark px-4 py-1.5 rounded-lg text-sm font-medium">Process Optimization</span>
+                        <span class="bg-primary-dark/10 text-primary-dark px-4 py-1.5 rounded-lg text-sm font-medium">Data-Driven Decision Making</span>
+                        <span class="bg-primary-dark/10 text-primary-dark px-4 py-1.5 rounded-lg text-sm font-medium">Financial Analysis</span>
+                        <span class="bg-primary-dark/10 text-primary-dark px-4 py-1.5 rounded-lg text-sm font-medium">KPI Development</span>
+                    </div>
+                </div>
+                
+                <!-- Category 3: Software & Tools -->
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <h4 class="text-xl font-bold mb-5 text-accent-indigo flex items-center"><i data-lucide="tool" class="w-5 h-5 mr-3"></i> Tools & CRM</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-primary-dark/10 text-primary-dark px-4 py-1.5 rounded-lg text-sm font-medium">Zoho CRM/Suite</span>
+                        <span class="bg-primary-dark/10 text-primary-dark px-4 py-1.5 rounded-lg text-sm font-medium">Smartlead</span>
+                        <span class="bg-primary-dark/10 text-primary-dark px-4 py-1.5 rounded-lg text-sm font-medium">Power BI</span>
+                        <span class="bg-primary-dark/10 text-primary-dark px-4 py-1.5 rounded-lg text-sm font-medium">Docusign / Zoho Sign</span>
+                        <span class="bg-primary-dark/10 text-primary-dark px-4 py-1.5 rounded-lg text-sm font-medium">JIRA, Trello</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-primary-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h4 class="text-2xl font-bold mb-2">Let's Connect</h4>
+            <p class="text-lg text-gray-400 mb-6">Open to new strategic opportunities in Business Development and GTM.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="mailto:samarthyadav.works@gmail.com" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-primary-dark bg-white hover:bg-gray-100 transition duration-150 shadow-lg">
+                    <i data-lucide="mail" class="w-5 h-5 mr-2"></i>
+                    Send an Email
+                </a>
+                <!-- New Resume Download Button -->
+                <a href="https://drive.google.com/file/d/1Sw2E8mhvuP_Swik_Jbwm14UiDhyr4x9P/view?usp=sharing" download="SamarthYadav_CV.pdf" class="inline-flex items-center justify-center px-6 py-3 border border-white text-base font-medium rounded-xl text-white bg-transparent hover:bg-white/10 transition duration-150 shadow-lg">
+                    <i data-lucide="download" class="w-5 h-5 mr-2"></i>
+                    Download Full CV (PDF)
+                </a>
+            </div>
+            <p class="text-sm mt-8 text-gray-500">&copy; 2025 Samarth Yadav. Designed for Impact.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Modal for Achievements -->
+    <div id="achievement-modal" class="modal fixed inset-0 z-50 hidden items-center justify-center p-4" onclick="this.classList.add('hidden');">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl transform scale-95 transition-all duration-300 ease-out" onclick="event.stopPropagation();">
+            <h4 id="modal-title" class="text-2xl font-bold text-accent-indigo mb-4"></h4>
+            <p id="modal-body" class="text-gray-700 leading-relaxed"></p>
+            <button onclick="document.getElementById('achievement-modal').classList.add('hidden')" class="mt-6 w-full px-4 py-2 bg-primary-dark text-white rounded-xl hover:bg-gray-700 transition duration-150">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Modal Functions
+        function showModal(title, body) {
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-body').textContent = body;
+            document.getElementById('achievement-modal').classList.remove('hidden');
+            document.getElementById('achievement-modal').classList.add('flex');
+        }
+
+        // Parallax Effect for Hero Image
+        const heroImageContainer = document.getElementById('hero-image-container');
+
+        function initParallax() {
+            // Apply initial position fix for better aesthetic
+            window.addEventListener('scroll', updateParallax);
+            updateParallax(); // Initial call
+        }
+
+        function updateParallax() {
+            if (!heroImageContainer) return;
+            // Get scroll position
+            const scrollY = window.scrollY || window.pageYOffset;
+            
+            // Calculate a slight vertical translation (Apple-like)
+            // Divide by a large number (e.g., 10) to make the movement subtle
+            const translateY = scrollY * 0.15; 
+            
+            // Apply transformation
+            heroImageContainer.style.transform = `translateY(${translateY}px)`;
+        }
+    </script>
+</body>
+</html>
